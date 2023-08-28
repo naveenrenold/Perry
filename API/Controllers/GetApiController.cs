@@ -1,18 +1,16 @@
 namespace GetApi.Controllers
 {
-
+    using GetApi.DataLayer.Interface;
     using Microsoft.AspNetCore.Mvc;
-
-
     [Route("api/[controller]")]
     [ApiController]
-    public class PerryController : ControllerBase
+    public class CommandController : ControllerBase
     {
+        public readonly IGetApiData iGetApiData;
         [HttpGet]
-        public async Task<IActionResult> Get()
-        {
-            
-            return Ok("Perry");
+        public  IActionResult GetCommands()
+        {   
+            return Ok(iGetApiData.GetCommands());            
         }
     }
 }
