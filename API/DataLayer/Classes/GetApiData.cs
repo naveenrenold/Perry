@@ -1,12 +1,21 @@
+using System.Data;
+using Dapper;
 using GetApi.DataLayer.Interface;
 using GetApi.Models.DataModels;
+using GetApi;
+using Microsoft.VisualBasic;
 
 namespace GetApi.DataLayer.Classes;
 public class GetApiData:IGetApiData
 {
-    public Command GetCommands()
+    private readonly DALBase dALBase;
+    public GetApiData()
     {
-        var command=new Command();
+        dALBase=new DALBase();
+    }
+    public IEnumerable<Command> GetCommands()
+    {                
+        var command= dALBase.Conn.Query<Command>(Query.Command.GetCommands);
         return command;
     }
 }
