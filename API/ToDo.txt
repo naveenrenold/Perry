@@ -1,5 +1,7 @@
-Connect database to API
-Make API call-half done
+Connect database to API-done
+Make API call-done
+Manage COrs- done
+
 Make UI route
 Get user prompt and do api call
 display output
