@@ -9,18 +9,19 @@ import { Component, Injectable, OnInit } from '@angular/core';
 })
 @Injectable()
 export class SearchComponent implements OnInit {
-  path='';
+  path:string='';
   data={};
 ngOnInit(): void {
 
 }
-constructor(private http: HttpClient)
+constructor(private http:HttpClient)
 {
 
 }
 APICall()
 {
-this.path='';
+console.log('Api call!')
+this.path='http://localhost:5229/api/Command';
 this.http.get(this.path).subscribe(res=>{
 this.data=res;
 })

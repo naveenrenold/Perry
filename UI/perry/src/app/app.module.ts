@@ -6,11 +6,11 @@ import { AppComponent } from './app.component';
 import { SearchComponent } from './Search/search/search.component';
 import { MainComponent } from './main/main/main.component';
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 
 @Injectable({providedIn: 'root'})
 export class ServiceNameService {
-  constructor(private httpClient: HttpClient) { }
+  constructor() { }
 
 }
 
@@ -18,11 +18,13 @@ export class ServiceNameService {
   declarations: [
     AppComponent,
     SearchComponent,
-    MainComponent
+    MainComponent,
+
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
