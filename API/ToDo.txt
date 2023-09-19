@@ -3,5 +3,7 @@ Make API call-done
 Manage COrs- done
 
 Make UI route-done
-Get user prompt and do api call
-display output
+Get user prompt and do api call-done
+display output-done
+
+complete

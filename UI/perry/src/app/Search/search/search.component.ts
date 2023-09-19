@@ -1,7 +1,11 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, Injectable, OnInit } from '@angular/core';
 
+class a{
+id:string='';
+description:string=''
 
+}
 @Component({
   selector: 'app-search',
   templateUrl: './search.component.html',
@@ -10,9 +14,9 @@ import { Component, Injectable, OnInit } from '@angular/core';
 @Injectable()
 export class SearchComponent implements OnInit {
   path:string='';
-  data={};
-ngOnInit(): void {
 
+  data:a[]=[];
+ngOnInit(): void {
 }
 constructor(private http:HttpClient)
 {
@@ -23,7 +27,7 @@ APICall()
 console.log('Api call!')
 this.path='http://localhost:5229/api/Command';
 this.http.get(this.path).subscribe(res=>{
-this.data=res;
+this.data=res as a[];
 })
 }
 }

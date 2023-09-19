@@ -2,7 +2,15 @@
   <body>
     <div style="width: 80%;height:80%;">
 <div >Search API:</div>
-<button style="background-color: green;color: yellow;margin-left:22px" (click)="APICall()">{{data}}</button>
+<button style="background-color: green;color: yellow;margin-left:22px" (click)="APICall()">Call!</button>
+<table>
+  <th>Id</th>
+  <th>Description</th>
+  <tr *ngFor="let item of data">
+    <td>{{item.id}}</td>
+    <td>{{item.description}}</td>
+  </tr>
+</table>
     </div>
   </body>
 </html>
